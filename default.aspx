@@ -4,7 +4,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />
-    <title>LinkSTEM</title> 
+    <title>LinkSTEM</title>
+    <link rel="stylesheet" href="Public/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" href="/Public/stylesheets/font-awesome.min.css" />
     <link rel="stylesheet" href="/Public/stylesheets/styles.css" />
 </head>
