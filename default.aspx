@@ -11,9 +11,7 @@
 </head>
 <body data-ng-app="LinkSTEM">
     
-    <main >
-
-    </main>
+    <div class="ng-view"></div>
     <!-- scripts -->
 
     <!-- lib -->
@@ -30,5 +28,6 @@
 
     <!-- controllers -->
     <script src="/Public/js/controllers/loginCTRL.js"></script>
+    <script src="/Public/js/controllers/contactCTRL.js"></script>
 </body>
 </html>
