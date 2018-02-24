@@ -15,19 +15,19 @@
     <!-- scripts -->
 
     <!-- lib -->
-    <script src="/Public/js/lib/jquery-3.0.0.js"></script>
-    <script src="/Public/js/lib/bootstrap.min.js"></script>
-    <script src="/Public/js/lib/angular.js"></script>
+    <script src="Public/js/lib/jquery-3.0.0.js"></script>
+    <script src="Public/js/lib/bootstrap.min.js"></script>
+    <script src="Public/js/lib/angular.js"></script>
     <script src="jquery-3.0.0.js"></script>
 
     <!-- app -->
-    <script src="/Public/js/app.js"></script>
+    <script src="Public/js/app.js"></script>
 
     <!-- services -->
-    <script src="/Public/js/services/dataService.js"></script>
+    <script src="Public/js/services/dataService.js"></script>
 
     <!-- controllers -->
-    <script src="/Public/js/controllers/loginCTRL.js"></script>
-    <script src="/Public/js/controllers/contactCTRL.js"></script>
+    <script src="Public/js/controllers/loginCTRL.js"></script>
+    <script src="Public/js/controllers/contactCTRL.js"></script>
 </body>
 </html>
