@@ -29,7 +29,7 @@
 
     <!-- controllers -->
     <script src="Public/js/controllers/loginCTRL.js"></script>
-    <script src="Public/js/controllers/contactCTRL.js"></script>
+    <script src="Public/js/controllers/mapCTRL.js"></script>
     <script src="Public/js/controllers/newuserCTRL.js"></script>
     <script src="Public/js/controllers/profileCTRL.js"></script>
 </body>
