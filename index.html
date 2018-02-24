@@ -4,18 +4,33 @@
 	<title>STEMap</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
-  type="text/javascript"></script>
+	    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 </head>
 <body>
+	    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
 	<form id="search">
 		Search STEMap
 		<input type="text" name="input" id="search-query">	
 	</form>
 </body>
-</html>
 
+    <script>
+
+    </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
+<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ&libraries=places"></script>
+<script type="text/javascript">
+  gapi.load('auth2', function() {
+    // Library loaded.
+  });
+</script>
 <script type="text/javascript" src="index.js"></script>
+</html>

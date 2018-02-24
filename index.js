@@ -9,28 +9,43 @@ $(function() {
 		$("#search-query").val("");
 
 		const searchParams = {
+			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
 			query: userQuery
 		};
-		requestData("displayMapData");
+		requestData(searchParams);
 	});
 });
 
-function requestData(callback) {
+function requestData(params) {
 	$.ajax({
 		url: MAP_URL,
 		type: "GET",
-		data: {
-			key: MAP_API_KEY,
-			query: "Miami"
-		},
+		data: params,
 		success: function(data) {
-			console.log(data);
+			displayMapData(data);
 		},
-		dataType: "json",
-		jsonpCallback: callback
+		dataType: "json"
 	});
 }
 
-function displayMapData() {
-	console.log("displayMapData");
+function displayMapData(data) {
+	console.log(data);
+	var searchLocation = data.results[0].geometry.location;
+	data.results.map(function(location) {
+		console.log(location);
+	});
+
+	initMap(searchLocation);
+}
+
+function initMap(location) {
+	var userLocation = { lat: location.lat, lng: location.lng };
+	var map = new google.maps.Map(document.getElementById("map"), {
+		zoom: 4,
+		center: userLocation
+	});
+	var marker = new google.maps.Marker({
+		position: userLocation,
+		map: map
+	});
 }
