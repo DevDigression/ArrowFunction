@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App_Code",
-    "\\App_Code\\Models",
-    "\\Public"
+    "\\Public",
+    "\\Public\\js"
   ],
   "PreviewInSolutionExplorer": false
 }
