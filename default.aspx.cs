@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using PetaPoco;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
