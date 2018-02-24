@@ -1,4 +1,4 @@
-﻿app.controller('mapCTRL', ['$scope', function ($scope) {
+﻿app.controller('mainCTRL', ['$scope', function ($scope) {
     $scope.init = function () {
         console.log("map page.");
     }
