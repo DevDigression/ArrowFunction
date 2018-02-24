@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="Public/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" href="Public/stylesheets/styles.css" />
 </head>
-<body>
+<body data-ng-app="LinkSTEM">
     
+    <main >
+
+    </main>
     <!-- scripts -->
 
     <!-- lib -->
