@@ -3,7 +3,12 @@
     "",
     "\\App_Code",
     "\\App_Code\\Models",
-    "\\Public"
+    "\\Public",
+    "\\Public\\js",
+    "\\Public\\js\\controllers",
+    "\\Public\\js\\services",
+    "\\Public\\views"
   ],
+  "SelectedNode": "\\Public\\js\\app.js",
   "PreviewInSolutionExplorer": false
 }
