@@ -19,13 +19,17 @@ public class DBConnection
         //
     }
 
-    public string get_markers(int provider_id) {
-        using (var db = new PetaPoco.Database("linkSTEM"))
+    public string get_markers(int provider_id)
+    {
+        /*using (var db = new PetaPoco.Database("linkSTEM"))
         {
             var SQL = Sql.Builder.Append("SELECT * ")
             .Append("FROM [linkSTEM].[dbo].[marker]")
             .Append("WHERE [provider_id] = @0", provider_id);
             return JsonConvert.SerializeObject(db.Fetch<Marker>(SQL));
-        }
-
+        }/**/
+        Marker test_marker = new Marker();
+        test_marker.Description = "Hello World";
+        return JsonConvert.SerializeObject(test_marker);
+    }
 }
