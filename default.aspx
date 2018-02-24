@@ -11,6 +11,7 @@
 </head>
 <body data-ng-app="LinkSTEM">
     
+    
     <div class="ng-view"></div>
     <!-- scripts -->
 
@@ -18,6 +19,7 @@
     <script src="Public/js/lib/jquery-3.0.0.js"></script>
     <script src="Public/js/lib/bootstrap.min.js"></script>
     <script src="Public/js/lib/angular.js"></script>
+    <script src="Public/js/lib/angular-route.js"></script>
 
     <!-- app -->
     <script src="Public/js/app.js"></script>
