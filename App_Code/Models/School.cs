@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections;
 
 /// <summary>
-/// Summary description for Class1
+/// School Model
 /// </summary>
-public class Class1
+public class School
 {
-	public Class1()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+    public int ID { get; set; }
+
+    public string Name { get; set; }
+
+    public string Username { get; set; }
+
+    public string Password { get; set; }
+
+    public List<Professional> Professionals { get; set; }
 }
