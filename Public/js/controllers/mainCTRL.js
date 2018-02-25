@@ -1,6 +1,14 @@
-﻿app.controller('mainCTRL', ['$scope', function ($scope) {
+﻿app.controller('mainCTRL', ['$scope', 'dataService', function ($scope, dataService) {
     $scope.init = function () {
-        console.log("map page.");
+        dataService.getAllMarkers().then(function (response) {
+
+            console.log(response);
+
+        }, function error(response) {
+
+            console.log(response);
+
+        });
     }
 
     $scope.init();
