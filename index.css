@@ -1,0 +1,35 @@
+.hidden {
+	display: none;
+}
+
+#search {
+	width: 90%;
+	margin: 20px auto;
+}
+
+.providers {
+	display: flex;
+	margin: 50px auto;
+	width: 90%;
+}
+
+.providers img {
+	margin-bottom: 20px;
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+}
+
+.provider {
+	border: 2px solid black;
+	/* width: 30%; */
+	/* height: 300px; */
+	/* display: inline-block; */
+	flex: 1;
+	margin: 0 15px;
+	padding: 10px;
+}
+
+.services {
+	padding-top: 40px;
+}
