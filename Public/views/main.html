@@ -9,12 +9,10 @@
         </div>
         <div class="col-xs-8">
             <div class="providers">
-                <div class="panel panel-default" data-ng-repeat="provider in providers">
-                    <div class="panel heading">
-                        {{provider.name}}
-                    </div>
-                    <div class="panel-body">
-                        <span>{{provider.name}}</span>
+                <div class="media" data-ng-repeat="provider in providers">
+                    <img class="d-flex mr-3" src="..." alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{provider.name}}</h5>
                     </div>
                 </div>
             </div>
