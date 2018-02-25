@@ -13,7 +13,7 @@
     
     <div class="ng-view"></div>
 
-    <!-- scripts -->
+    <!-- scripts -  -->
 
     <!-- lib -->
     <script src="/Public/js/lib/jquery-3.0.0.js"></script>
