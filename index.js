@@ -2,14 +2,17 @@ const MAP_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 const NEARBY_URL =
 	"https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 const MAP_API_KEY = "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ";
-var map, marker, infoWindow;
+var map, marker, infoWindow, userQuery, userKeyword;
 
 $(function() {
 	// Type into landing form  [Map]
 	$("#search").submit(function(event) {
 		event.preventDefault();
-		var userQuery = $("#search-query").val();
+		userQuery = $("#search-query").val();
 		$("#search-query").val("");
+
+		userKeyword = $("#keyword-query").val();
+		$("#keyword-query").val("");
 
 		const userSearchParams = {
 			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
@@ -31,6 +34,7 @@ function findUser(params) {
 			const nearbyParams = {
 				key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
 				location: `${lat}, ${lng}`,
+				keyword: userKeyword,
 				radius: 40000
 			};
 
@@ -54,6 +58,7 @@ function nearbySearch(params) {
 }
 
 function initMap(data) {
+	console.log(data);
 	var centerLocation = {
 		lat: data.results[0].geometry.location.lat,
 		lng: data.results[0].geometry.location.lng
@@ -72,18 +77,19 @@ function initMap(data) {
 		var currentMarker = markers[i];
 		var name = markers[i].name;
 		console.log(name);
+		var icon = {
+			url: markers[i].icon,
+			size: new google.maps.Size(71, 71),
+			origin: new google.maps.Point(0, 0),
+			anchor: new google.maps.Point(17, 34),
+			scaledSize: new google.maps.Size(25, 25)
+		};
 		marker = new google.maps.Marker({
 			position: { lat: location.lat, lng: location.lng },
-			map: map
-			// icon: STEM icon img url
+			map: map,
+			icon: icon
 		});
 
-		// infoWindow = new google.maps.InfoWindow({
-		// 	content: name
-		// });
-		// marker.addListener("click", function() {
-		// 	infoWindow.open(map, marker);
-		// });
 		var infowindow = new google.maps.InfoWindow();
 		google.maps.event.addListener(
 			marker,
@@ -99,5 +105,4 @@ function initMap(data) {
 			})(marker, name, infowindow)
 		);
 	}
-	// console.log(markers);
 }
