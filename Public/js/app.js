@@ -14,5 +14,8 @@ app = angular.module('LinkSTEM', ['ngRoute']).config(function ($routeProvider) {
         })
         .when("/profile", {
             templateUrl: "/Public/views/profile.html"
+        })
+        .when("/markeradd", {
+            templateUrl: "/Public/views/markerAdd.html"
         });
 });
