@@ -10,4 +10,12 @@
         });
     };
 
+
+    this.getAllMarkers = function () {
+        return WebServiceCall('/default.aspx/getAllMarkers', JSON.stringify({}));
+    };
+
+    this.addProvider = function (provider) {
+        return WebServiceCall('/default.aspx/addProvider', JSON.stringify({provider: provider}));
+    };
 }]);
