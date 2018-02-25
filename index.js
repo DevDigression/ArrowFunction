@@ -3,7 +3,7 @@ const NEARBY_URL =
 	"https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 const GEOCODE_URL = "https://maps.googleapis.com/maps/api/geocode/json";
 const MAP_API_KEY = "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ";
-var map, marker, infoWindow, userQuery, userKeyword;
+var map, marker, infoWindow, userQuery, address, userKeyword;
 
 var providers = [
 	{
@@ -60,8 +60,11 @@ $(function() {
 			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
 			query: userQuery
 		};
-		geoCode(geoParams);
-		// findUser(userSearchParams);
+		// if (address.length > 5) {
+		// 	geoCode(geoParams);
+		// } else {
+		findUser(userSearchParams);
+		// }
 	});
 
 	var providersList = providers.map(provider => renderProviders(provider));
@@ -87,14 +90,13 @@ $(function() {
 function renderProviders(provider) {
 	return `
 		<div class="provider">
+		<h2>${provider.company}</h2>
 		<img src="${provider.image}" />
-		<h2>${provider.name}</h2>
-		<h3>${provider.company}</h3>
+		<h3>${provider.name}</h2>
 		<p>${provider.email}</p>
-		<p><span>${provider.address}</span></p>
-		<a href=${provider.website} target="_blank">${provider.website}</a>
-		<div class="services">Services
-			<ul class="hidden">
+		
+				<div class="services"><span>Services Available:</span>
+			<ul>
 				${provider.services
 					.map(service => {
 						return `<li>${service}</li>`;
@@ -102,6 +104,9 @@ function renderProviders(provider) {
 					.join("")}
 			</ul>
 		</div>
+		<p>Visit website:</p>
+		<a href=${provider.website} target="_blank">${provider.website}</a>
+		<p>Find on map:</p><p><span class="address">${provider.address}</span></p>
 		</div>
       `;
 }
@@ -122,6 +127,18 @@ function findUser(params) {
 			};
 
 			nearbySearch(nearbyParams);
+		},
+		dataType: "json"
+	});
+}
+
+function geoCode(params) {
+	$.ajax({
+		url: GEOCODE_URL,
+		type: "GET",
+		data: params,
+		success: function(data) {
+			initMap(data);
 		},
 		dataType: "json"
 	});
@@ -150,10 +167,7 @@ function initMap(data) {
 		zoom: 12,
 		center: centerLocation
 	});
-	// marker = new google.maps.Marker({
-	// 	position: centerLocation,
-	// 	map: map
-	// });
+
 	var markers = data.results;
 	for (var i = 0; i < markers.length; i++) {
 		var location = markers[i].geometry.location;
@@ -188,16 +202,4 @@ function initMap(data) {
 			})(marker, name, infowindow)
 		);
 	}
-}
-
-function geoCode(params) {
-	$.ajax({
-		url: GEOCODE_URL,
-		type: "GET",
-		data: params,
-		success: function(data) {
-			initMap(data);
-		},
-		dataType: "json"
-	});
 }

@@ -13,26 +13,29 @@
     </style>
 </head>
 <body>
-	    <form id="search">
-	    			<label>Address</label>
-		<input type="text" name="input" id="address">
-		<label>City, State</label>
-		<input type="text" name="input" id="search-query">
-	
-		<label>Tech Keyword</label>
-		<input type="text" name="input" id="keyword-query">	
-
-		<button>Submit</button>	
-	</form>
-				<div class="providers">
+	<h1>Featured Contacts</h1>
+		<div class="providers">
 				<!-- 	Providers -->
-				</div>
+		</div>
+
+	<h2>Search events nearby</h2>
+	<form id="search">
+			<div class="search-section">
+			    <label>Address</label>
+				<input type="text" placeholder="313 Datura Street" name="input" id="address">
+			</div>
+			<div class="search-section">
+				<label>City</label>
+				<input type="text" placeholder="West Palm Beach, FL" name="input" id="search-query">
+			</div>
+			<div class="search-section">
+				<label>Keyword</label>
+				<input type="text" placeholder="Computer Programming" name="input" id="keyword-query">
+			</div>
+				<button>Submit</button>	
+	</form>
     <div id="map"></div>
 </body>
-
-    <script>
-
-    </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
