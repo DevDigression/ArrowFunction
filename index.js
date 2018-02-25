@@ -1,6 +1,7 @@
 const MAP_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 const NEARBY_URL =
 	"https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+const GEOCODE_URL = "https://maps.googleapis.com/maps/api/geocode/json";
 const MAP_API_KEY = "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ";
 var map, marker, infoWindow, userQuery, userKeyword;
 
@@ -11,6 +12,12 @@ $(function() {
 		userQuery = $("#search-query").val();
 		$("#search-query").val("");
 
+		address = $("#address").val();
+		$("#address").val("");
+		const geoParams = {
+			address: address,
+			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
+		};
 		userKeyword = $("#keyword-query").val();
 		$("#keyword-query").val("");
 
@@ -18,7 +25,8 @@ $(function() {
 			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
 			query: userQuery
 		};
-		findUser(userSearchParams);
+		geoCode(geoParams);
+		// findUser(userSearchParams);
 	});
 });
 
@@ -105,4 +113,16 @@ function initMap(data) {
 			})(marker, name, infowindow)
 		);
 	}
+}
+
+function geoCode(params) {
+	$.ajax({
+		url: GEOCODE_URL,
+		type: "GET",
+		data: params,
+		success: function(data) {
+			initMap(data);
+		},
+		dataType: "json"
+	});
 }
