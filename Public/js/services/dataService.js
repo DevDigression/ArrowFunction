@@ -10,8 +10,8 @@
         });
     };
 
-    this.addMarker = function () {
-        return WebServiceCall('/default.aspx/getAllMarkers', JSON.stringify({}));
+    this.addMarker = function (marker) {
+        return WebServiceCall('/default.aspx/getAllMarkers', JSON.stringify({marker: marker}));
     };
 
     this.getAllMarkers = function () {
