@@ -184,6 +184,12 @@
 
     function initMap(data) {
 
+        var markers = [
+            { name: "Javascript Coding Summer Camp", date: "9/12/2018", lat: 26.7153424, lon: -80.05337459999998},
+            { name: "Dreher Park Zoo and Science Museum STEM Outreach", date: "6/01/2018", lat: 26.6658176, lon: -80.06896840000002},
+            { name: "Data Science Mentorship Interviews", date: "5/22/2018", lat: 26.6617635, lon: -80.2683571},
+        ]
+
         var centerLocation = {
             lat: 27,
             lng: -81
@@ -191,6 +197,21 @@
         map = new google.maps.Map(document.getElementById("map"), {
             zoom: 7,
             center: centerLocation
+        });
+
+        markers.forEach(function (marker) {
+            var mapmarker = new google.maps.Marker({
+                position: new google.maps.LatLng(marker.lat, marker.lon),
+                map: map
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "<div><p>" + marker.name + "</p>" + "<p>" + marker.date + "</p></div>"
+            });
+
+            mapmarker.addListener('click', function () {
+                infowindow.open(map, mapmarker);
+            });
         });
 
         //function geoCode(params) {
