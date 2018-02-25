@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ArrowFunction", "..\..\..\ArrowFunction\", "{77242D29-B46C-4DDC-995C-23A7F21583A3}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ArrowFunction", "..\ArrowFunction\", "{77242D29-B46C-4DDC-995C-23A7F21583A3}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53816"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\ArrowFunction\"
+		Debug.AspNetCompiler.PhysicalPath = "..\ArrowFunction\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53816\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_53816"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\ArrowFunction\"
+		Release.AspNetCompiler.PhysicalPath = "..\ArrowFunction\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53816\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "53816"
-		SlnRelativePath = "..\..\..\ArrowFunction\"
+		SlnRelativePath = "..\ArrowFunction\"
 	EndProjectSection
 EndProject
 Global
