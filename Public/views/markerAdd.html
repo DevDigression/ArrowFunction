@@ -1,0 +1,35 @@
+﻿<div id="add_marker" data-ng-controller="markerCTRL">
+   
+  <div class="">
+ <div class="" >
+     <h1 style="text-align:center"> Add Marker </h1>
+     <form class="px-4 py-3">
+         <!-- Marker Columns: Name, Description, Date, Longitude, Latitude-->
+         <div class="form-group ">
+             <label class="_label">Name</label>
+             <input type="text" class="form-control" id="name" placeholder="Name">
+         </div>
+         <div class="form-group ">
+             <label class="_label">Description</label>
+             <input type="text" class="form-control" id="desc" placeholder="Name">
+         </div>
+         <div class="form-group ">
+             <label class="_label" for="exampleDropdownFormEmail1">Date</label>
+             <input type="date" class="form-control" id="date" placeholder="Name">
+         </div>
+         <div class="form-group ">
+             <label class="_label">Longitude</label>
+             <input type="number" class="form-control" id="long" placeholder="Name">
+         </div>
+         <div class="form-group ">
+             <label class="_label">Latitude</label>
+             <input type="number" class="form-control" id="lat" placeholder="Name">
+         </div>
+
+         <hr />
+         <button type="submit" class="btn btn-primary" data-ng-click="AddMarker()">Add</button>
+     </form>
+     
+</div>
+ </div>
+</div>
