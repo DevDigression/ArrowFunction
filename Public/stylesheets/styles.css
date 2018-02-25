@@ -127,15 +127,40 @@ span._code {
     
  
     font-size:2em;
-=======
- /* Chris: From index.css */
-.hidden {
-    display: none;
 }
 
-#search {
-    width: 90%;
-    margin: 20px auto;
+ /* Chris: From index.css */
+p,
+h2,
+h3,
+label {
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+a,
+a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000066;
+}
+
+.hidden {
+    display: none;
 }
 
 .providers {
@@ -152,16 +177,44 @@ span._code {
 }
 
 .provider {
-    border: 2px solid black;
-    /* width: 30%; */
-    /* height: 300px; */
-    /* display: inline-block; */
+    text-align: center;
+    background-color: #e8e8e8;
     flex: 1;
     margin: 0 15px;
-    padding: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 }
 
-.services {
-    padding-top: 40px;
->>>>>>> f91a56f99d469c770f72a4ba99355c8f1219570a
+.provider:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.address:hover {
+    cursor: pointer;
+    color: #000066;
+}
+
+#search {
+    width: 50%;
+    margin: 30px auto;
+}
+
+#search button {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    background-color: #e8e8e8;
+    color: #333;
+}
+
+.search-section {
+    width: 30%;
+    display: inline-block;
+}
+
+.services span {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
 }
