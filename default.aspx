@@ -5,7 +5,7 @@
 <head runat="server">
 <meta charset="utf-8" />
     <title>LinkSTEM</title>
-    <link rel="stylesheet" href="/Public/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
     <link rel="stylesheet" href="/Public/stylesheets/font-awesome.min.css" />
     <link rel="stylesheet" href="/Public/stylesheets/styles.css" />
 </head>
@@ -17,9 +17,11 @@
 
     <!-- lib -->
     <script src="/Public/js/lib/jquery-3.0.0.js"></script>
-    <script src="/Public/js/lib/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="/Public/js/lib/angular.js"></script>
     <script src="/Public/js/lib/angular-route.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnbM0dyaz2jigcqv0c0TjgI6pVWSbLlPc"></script>
+
 
     <!-- app -->
     <script src="/Public/js/app.js"></script>

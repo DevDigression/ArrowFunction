@@ -67,51 +67,49 @@
             // }
     }
 
-    //$(function () {
-    //    $("#search").submit(function (event) {
-    //        event.preventDefault();
-    //        userQuery = $("#search-query").val();
-    //        $("#search-query").val("");
+        //$("#search").submit(function (event) {
+        //    event.preventDefault();
+        //    userQuery = $("#search-query").val();
+        //    $("#search-query").val("");
 
-    //        address = $("#address").val();
-    //        $("#address").val("");
-    //        const geoParams = {
-    //            address: address,
-    //            key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
-    //        };
-    //        userKeyword = $("#keyword-query").val();
-    //        $("#keyword-query").val("");
+        //    address = $("#address").val();
+        //    $("#address").val("");
+        //    const geoParams = {
+        //        address: address,
+        //        key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
+        //    };
+        //    userKeyword = $("#keyword-query").val();
+        //    $("#keyword-query").val("");
 
-    //        const userSearchParams = {
-    //            key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
-    //            query: userQuery
-    //        };
-    //        // if (address.length > 5) {
-    //        // 	geoCode(geoParams);
-    //        // } else {
-    //        findUser(userSearchParams);
-    //        // }
-    //    });
+        //    const userSearchParams = {
+        //        key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
+        //        query: userQuery
+        //    };
+        //    // if (address.length > 5) {
+        //    // 	geoCode(geoParams);
+        //    // } else {
+        //    findUser(userSearchParams);
+        //    // }
+        //});
 
-    //    var providersList = providers.map(provider => renderProviders(provider));
+        //var providersList = providers.map(provider => renderProviders(provider));
 
-    //    $(".providers").html(providersList);
+        //$(".providers").html(providersList);
 
-    //    $(".provider").on("click", "span", function (event) {
-    //        var providerAddress = $(this).text();
-    //        const providerParams = {
-    //            address: providerAddress,
-    //            key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
-    //        };
-    //        geoCode(providerParams);
-    //    });
+        //$(".provider").on("click", "span", function (event) {
+        //    var providerAddress = $(this).text();
+        //    const providerParams = {
+        //        address: providerAddress,
+        //        key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ"
+        //    };
+        //    geoCode(providerParams);
+        //});
 
-    //    $(".services").on("click", function (event) {
-    //        $(this)
-    //            .find("ul")
-    //            .toggleClass("hidden");
-    //    });
-    //});
+        //$(".services").on("click", function (event) {
+        //    $(this)
+        //        .find("ul")
+        //        .toggleClass("hidden");
+        //});
 
     //function renderProviders(provider) {
     //    return `
@@ -138,6 +136,7 @@
     //}
 
     //function findUser(params) {
+
     //    $.ajax({
     //        url: MAP_URL,
     //        type: "GET",
@@ -147,7 +146,7 @@
     //            var lng = data.results[0].geometry.location.lng;
     //            const nearbyParams = {
     //                key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
-    //                location: `${lat}, ${lng}`,
+    //                location: '${lat}, ${lng}',
     //                keyword: userKeyword,
     //                radius: 40000
     //            };
@@ -158,17 +157,17 @@
     //    });
     //}
 
-    //function geoCode(params) {
-    //    $.ajax({
-    //        url: GEOCODE_URL,
-    //        type: "GET",
-    //        data: params,
-    //        success: function (data) {
-    //            initMap(data);
-    //        },
-    //        dataType: "json"
-    //    });
-    //}
+    function geoCode(params) {
+        $.ajax({
+            url: GEOCODE_URL,
+            type: "GET",
+            data: params,
+            success: function (data) {
+                initMap(data);
+            },
+            dataType: "json"
+        });
+    }
 
     //function nearbySearch(params) {
     //    var nearbyLocation = "";
@@ -183,52 +182,70 @@
     //    });
     //}
 
-    //function initMap(data) {
-    //    console.log(data);
-    //    var centerLocation = {
-    //        lat: data.results[0].geometry.location.lat,
-    //        lng: data.results[0].geometry.location.lng
-    //    };
-    //    map = new google.maps.Map(document.getElementById("map"), {
-    //        zoom: 12,
-    //        center: centerLocation
-    //    });
+    function initMap(data) {
 
-    //    var markers = data.results;
-    //    for (var i = 0; i < markers.length; i++) {
-    //        var location = markers[i].geometry.location;
-    //        var currentMarker = markers[i];
-    //        var name = markers[i].name;
-    //        console.log(name);
-    //        var icon = {
-    //            url: markers[i].icon,
-    //            size: new google.maps.Size(71, 71),
-    //            origin: new google.maps.Point(0, 0),
-    //            anchor: new google.maps.Point(17, 34),
-    //            scaledSize: new google.maps.Size(25, 25)
-    //        };
-    //        marker = new google.maps.Marker({
-    //            position: { lat: location.lat, lng: location.lng },
-    //            map: map,
-    //            icon: icon
-    //        });
+        var centerLocation = {
+            lat: 27,
+            lng: -81
+        };
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 7,
+            center: centerLocation
+        });
 
-    //        var infowindow = new google.maps.InfoWindow();
-    //        google.maps.event.addListener(
-    //            marker,
-    //            "click",
-    //            (function (marker, name, infowindow) {
-    //                return function () {
-    //                    infowindow.setContent(name);
-    //                    infowindow.open(map, marker);
-    //                    google.maps.event.addListener(map, "click", function () {
-    //                        infowindow.close();
-    //                    });
-    //                };
-    //            })(marker, name, infowindow)
-    //        );
-    //    }
-    //}
+        //function geoCode(params) {
+        //    console.log(params);
+        //    $.ajax({
+        //        url: GEOCODE_URL,
+        //        type: "GET",
+        //        data: params,
+        //        success: function (data) {
+        //            initMap(data);
+        //        },
+        //        dataType: "json"
+        //    });
+        //}
+
+        //var markers = data.results;
+        //for (var i = 0; i < markers.length; i++) {
+        //    var location = markers[i].geometry.location;
+        //    var currentMarker = markers[i];
+        //    var name = markers[i].name;
+        //    console.log(name);
+        //    var icon = {
+        //        url: markers[i].icon,
+        //        size: new google.maps.Size(71, 71),
+        //        origin: new google.maps.Point(0, 0),
+        //        anchor: new google.maps.Point(17, 34),
+        //        scaledSize: new google.maps.Size(25, 25)
+        //    };
+        //    marker = new google.maps.Marker({
+        //        position: { lat: location.lat, lng: location.lng },
+        //        map: map,
+        //        icon: icon
+        //    });
+
+        //    var infowindow = new google.maps.InfoWindow();
+        //    google.maps.event.addListener(
+        //        marker,
+        //        "click",
+        //        (function (marker, name, infowindow) {
+        //            return function () {
+        //                infowindow.setContent(name);
+        //                infowindow.open(map, marker);
+        //                google.maps.event.addListener(map, "click", function () {
+        //                    infowindow.close();
+        //                });
+        //            };
+        //        })(marker, name, infowindow)
+        //    );
+        //}
+    }
+
+    $scope.ShowMap = function () {
+
+        initMap();
+    };
 
 
 }]);
