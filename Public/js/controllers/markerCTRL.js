@@ -1,5 +1,5 @@
 ﻿app.controller('markerCTRL', ['$scope', 'dataService', function ($scope, dataService) {
-    $scope.init = function () {
+    $scope.AddMarker = function () {
         dataService.addMarker.then(function (response) {
 
             console.log(response);

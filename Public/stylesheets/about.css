@@ -1,0 +1,42 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Noto Sans', sans-serif;
+    text-align: justify;
+    color: #1A237E;
+}
+
+section.main {
+    background-color: #BBDEFB;
+    width: 720px;
+    border: 1px #01579B solid;
+}
+
+article {
+    padding: 10px 20px 10px 20px;
+}
+
+main {
+    background-color: #E3F2FD;
+    padding: 10px 20px 10px 20px;
+    border: 1px #01579B solid;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+}

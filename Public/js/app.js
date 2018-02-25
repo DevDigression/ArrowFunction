@@ -1,7 +1,7 @@
 app = angular.module('LinkSTEM', ['ngRoute']).config(function ($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "/Public/views/login.html"
+            templateUrl: "/Public/views/main.html"
         })
         .when("/main", {
             templateUrl: "/Public/views/main.html"
@@ -14,5 +14,8 @@ app = angular.module('LinkSTEM', ['ngRoute']).config(function ($routeProvider) {
         })
         .when("/profile", {
             templateUrl: "/Public/views/profile.html"
+        })
+        .when("/markeradd", {
+            templateUrl: "/Public/views/markerAdd.html"
         });
 });
