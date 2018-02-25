@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Public",
-    "\\Public\\js"
+    "\\Public\\image",
+    "\\Public\\js\\controllers",
+    "\\Public\\js\\services",
+    "\\Public\\views"
   ],
+  "SelectedNode": "\\default.aspx",
   "PreviewInSolutionExplorer": false
 }
