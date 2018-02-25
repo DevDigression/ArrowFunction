@@ -5,7 +5,7 @@
 <head runat="server">
 <meta charset="utf-8" />
     <title>LinkSTEM</title>
-    <link rel="stylesheet" href="Public/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Public/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" href="/Public/stylesheets/font-awesome.min.css" />
     <link rel="stylesheet" href="/Public/stylesheets/styles.css" />
 </head>
@@ -29,6 +29,8 @@
 
     <!-- controllers -->
     <script src="/Public/js/controllers/mainCTRL.js"></script>
-
+    <script src="/Public/js/controllers/loginCTRL.js"></script>
+    <script src="/Public/js/controllers/profileCTRL.js"></script>
+    <script src="/Public/js/controllers/registerCTRL.js"></script>
 </body>
 </html>
