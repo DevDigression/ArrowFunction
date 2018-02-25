@@ -7,12 +7,12 @@
      <h1 style="text-align:center"> Log In </h1>
   <form class="px-4 py-3">
     <div class="form-group ">
-      <label for="exampleDropdownFormEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+      <label class="_label" for="exampleDropdownFormEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" data-ng-model="Email">
     </div>
     <div class="form-group">
-      <label for="exampleDropdownFormPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+      <label class="_label" for="exampleDropdownFormPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" data-ng-model="Password">
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="dropdownCheck">
@@ -20,7 +20,8 @@
         Remember me
       </label>
     </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
+      <hr />
+    <button type="submit" class="btn btn-primary" data-ng-click="SignIn()">Sign in</button>
   </form>
   <div class="dropdown-divider"></div>
   <a class="dropdown-item" href="#">New around here? Sign up</a>
