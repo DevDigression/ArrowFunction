@@ -4,7 +4,8 @@ app = angular.module('LinkSTEM', ['ngRoute']).config(function ($routeProvider) {
             templateUrl: "/Public/views/About.html"
         })
         .when("/main", {
-            templateUrl: "/Public/views/main.html"
+            templateUrl: "/Public/views/main.html",
+            controller: "mainCTRL"
         })
         .when("/login", {
             templateUrl: "/Public/views/login.html"
