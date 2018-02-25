@@ -27,6 +27,24 @@ public partial class _Default : System.Web.UI.Page
     }
 
     [WebMethod]
+    public bool deleteMarker(Marker marker)
+    {
+        try
+        {
+            using (var db = new PetaPoco.Database("linkSTEM"))
+            {
+                db.Insert("Markers", "marker_ID", marker);
+                return true;
+            }
+
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
+    [WebMethod]
     public bool addMarker(Marker marker)
     {
         try
