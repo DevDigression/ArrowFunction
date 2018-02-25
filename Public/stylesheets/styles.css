@@ -20,6 +20,15 @@ position: relative;
 
 }
 
+._body {
+    
+	  background: url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0b33dfe1da4ccca6ca490194d9fcc0ea&auto=format&fit=crop&w=1050&q=80") no-repeat center center fixed;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 nav {
 /* background:  rgb(235, 82, 8); */
  margin: 0;
