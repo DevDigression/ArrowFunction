@@ -11,7 +11,7 @@
     };
 
     this.addMarker = function (marker) {
-        return WebServiceCall('/default.aspx/getAllMarkers', JSON.stringify({marker: marker}));
+        return WebServiceCall('/default.aspx/addMarker', JSON.stringify({marker: marker}));
     };
 
     this.getAllMarkers = function () {
