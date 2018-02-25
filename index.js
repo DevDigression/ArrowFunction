@@ -11,28 +11,30 @@ $(function() {
 		var userQuery = $("#search-query").val();
 		$("#search-query").val("");
 
-		const searchParams = {
+		const userSearchParams = {
 			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
 			query: userQuery
 		};
-
-		const nearbyParams = {
-			key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
-			location: "-10, 35",
-			radius: 40000
-		};
-		// requestData(searchParams);
-		nearbySearch(nearbyParams);
+		findUser(userSearchParams);
 	});
 });
 
-function requestData(params) {
+function findUser(params) {
 	$.ajax({
 		url: MAP_URL,
 		type: "GET",
 		data: params,
 		success: function(data) {
-			displayMapData(data);
+			var lat = data.results[0].geometry.location.lat;
+			console.log(lat);
+			var lng = data.results[0].geometry.location.lng;
+			const nearbyParams = {
+				key: "AIzaSyCO2JUg6qbtk_gGZRWS78YmABZEgtC95iQ",
+				location: `${lat}, ${lng}`,
+				radius: 40000
+			};
+
+			nearbySearch(nearbyParams);
 		},
 		dataType: "json"
 	});
@@ -51,27 +53,6 @@ function nearbySearch(params) {
 	});
 }
 
-function displayMapData(data) {
-	console.log(data);
-	var searchLocation = data.results[0].geometry.location;
-	data.results.map(function(location) {
-		console.log(location);
-	});
-
-	initMap(searchLocation);
-}
-
-function displayNearbyData(data) {
-	console.log(data);
-	var nearbyLocation = data.results[0].geometry.location;
-	// createMarkers(data.results);
-	// data.results.map(function(location) {
-	// 	console.log(location);
-	// });
-
-	initMap(nearbyLocation);
-}
-
 function initMap(data) {
 	var centerLocation = {
 		lat: data.results[0].geometry.location.lat,
@@ -88,36 +69,35 @@ function initMap(data) {
 	var markers = data.results;
 	for (var i = 0; i < markers.length; i++) {
 		var location = markers[i].geometry.location;
+		var currentMarker = markers[i];
+		var name = markers[i].name;
+		console.log(name);
 		marker = new google.maps.Marker({
 			position: { lat: location.lat, lng: location.lng },
 			map: map
 			// icon: STEM icon img url
 		});
-		// markers.push(marker);
+
+		// infoWindow = new google.maps.InfoWindow({
+		// 	content: name
+		// });
+		// marker.addListener("click", function() {
+		// 	infoWindow.open(map, marker);
+		// });
+		var infowindow = new google.maps.InfoWindow();
+		google.maps.event.addListener(
+			marker,
+			"click",
+			(function(marker, name, infowindow) {
+				return function() {
+					infowindow.setContent(name);
+					infowindow.open(map, marker);
+					google.maps.event.addListener(map, "click", function() {
+						infowindow.close();
+					});
+				};
+			})(marker, name, infowindow)
+		);
 	}
-	console.log(markers);
-}
-
-function createMarkers(data) {
-	console.log(data);
-	var markers = [];
-	for (var i = 0; i < data.length; i++) {
-		var location = data[i].geometry.location;
-		marker = new google.maps.Marker({
-			position: { lat: location.lat, lng: location.lng },
-			map: map
-			// icon: STEM icon img url
-		});
-		markers.push(marker);
-	}
-
-	infoWindow = new google.maps.InfoWindow({
-		content: "<h1>Title</h1>"
-	});
-
-	marker.addListener("click", function() {
-		infoWindow.open(map, marker);
-	});
-	console.log(markers);
-	// var markerCluster = new MarkerClusterer(map, markers);
+	// console.log(markers);
 }
