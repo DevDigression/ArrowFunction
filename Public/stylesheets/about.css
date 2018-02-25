@@ -29,7 +29,7 @@ article {
     padding: 10px 20px 10px 20px;
 }
 
-main {
+div#main {
     background-color: #E3F2FD;
     padding: 10px 20px 10px 20px;
     border: 1px #01579B solid;
