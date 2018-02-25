@@ -26,7 +26,16 @@ body{
   background-size: cover;
 }
 
-._loginWrap {
+._body2 {
+    height: 100vh;
+    padding: 20px;
+    background: url("public/image/background.jpg")
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    ._loginWrap {
     position: relative;
     width: 50%;
     margin: 2% auto;
